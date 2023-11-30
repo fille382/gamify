@@ -26,7 +26,7 @@ randomSpins: number = 0;
     const randomInt = Math.floor(Math.random() * 2) + 1; // Generate a random integer between 1 and 2
     this.inRoundValue += randomInt;
     this.roundValue = randomInt;
-    
+
   }
 
   checkWin() {
@@ -37,7 +37,7 @@ randomSpins: number = 0;
     }
     else
     {
-      console.log("You lost");
+      console.log("You lost :(");
     }
   }
 }

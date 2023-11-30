@@ -39,6 +39,6 @@ export class CoinflipComponent {
 
     setTimeout(() => {
         this.isFlipping = false;
-    }, 4000);
+    }, 10000);
   }
 }

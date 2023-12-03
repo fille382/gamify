@@ -1,12 +1,28 @@
+<div class="ggbody">
     
-    <div class="ggbody">
-        <div id="blue" class="amount"></div>
+    <div *ngIf="showPopup" class="popup">WIN: {{winAmount}}</div>
+    <div id="blue" class="amount"></div>
 
-        <div id="coin" (click)="flipCoin()" #coin>
+    <div class="coin-container">
+        <div id="coin" (click)="flipCoin()" [class.disabled]="playerWallet === 0" #coin>
             <div id="front"></div>
             <div id="back"></div>
         </div>
 
-        <div id="red" class="amount"></div>
-      </div>  
+        <!-- Button goes here -->
+        <button [style.background-color]="buttonColor" (click)="changeButtonColor()" [disabled]="isFlipping">My color</button>
         
+        <!-- Slider goes here -->
+        <input type="range" [max]="playerWallet" [(ngModel)]="sliderValue" min="0" step="10" [disabled]="isFlipping">
+        <p>Slider Value: {{sliderValue}}</p>
+        
+    </div>
+    
+    <!-- Wallet goes here -->
+    <div class="wallet-container">
+        <input type="text" [value]="playerWallet" readonly>
+        
+    </div>
+
+    <div id="red" class="amount"></div>
+</div>

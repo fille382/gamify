@@ -1,10 +1,63 @@
 .ggbody {
-    background-color: #14161f;
+    position: relative; // Add this line
+    background-color: #393d52;
     display: flex;
     justify-content: space-between;
+    align-items: center; // Add this line
     font-family: Arial;
     margin: 0;
     min-height: 100vh;
+}
+input[type="range"] {
+    width: 50vw;
+    margin-top: 20px;
+}
+
+.popup {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 9999; // Add this line
+}
+.coin-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.wallet-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+#coin.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    outline: none;
+    cursor: pointer;
+    margin-top: 80px; // Add some space between the coin and the button
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
 }
 
 .amount {
@@ -21,17 +74,21 @@
 }
 
 #coin {
+    
     position: relative;
     width: 200px;
     height: 200px;
     perspective: 1000px;
-    transition: transform 5s cubic-bezier(.21,.8,.53,.23), box-shadow 0.2s ease;
+    //transition: transform 0.5s cubic-bezier(.21,.8,.53,.23), box-shadow 0.2s ease;
     transform-style: preserve-3d;
-    background-color: #020b13;
+    background-color: #0d1115;
     box-sizing: border-box;
     border-radius: 50%;
     align-self: center;
     box-shadow: 0 10px 10px rgba(0,0,0, 0.2);
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 #coin.flipping {

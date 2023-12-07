@@ -1,0 +1,21 @@
+.dice {
+    width: 100px;
+    height: 100px;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+@keyframes roll {
+    0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+    100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
+}
+
+.dice.rolling {
+    animation: roll 1s ease-out;
+}
